@@ -9,23 +9,21 @@
 
         <div class="content-form">
             <div class="input-container">
-                <div class="label"><strong>Login</strong></div>
+                <div class="label"><strong>Email</strong></div>
                 <input pinputtext="" type="text" class="col-lg-12 p-inputtext p-corner-all p-state-default p-widget"
-                  formControlName="login" id="login">
+                   id="email" [(ngModel)]="email" (keyup)="validateEmail($event)">
+                  <span class="error-message" *ngIf="emailError">{{textErrorEmail}}</span>
             </div>
 
             <div class="input-container">
                 <div class="label"><strong>Senha</strong></div>
                 <input pinputtext="" type="password" class="col-lg-12 p-inputtext p-corner-all p-state-default p-widget"
-                  formControlName="password" id="password">
+                   id="password" [(ngModel)]="password">
+                  <span class="error-message" *ngIf="passwordError">{{textErrorPassword}}</span>
             </div>
 
             <div class="input-container">
-                <button pButton type="button" label="Entrar">Entrar</button>
-            </div>
-
-            <div class="info-cadastro">
-                <span>Ainda não é cadastrado ? <a href="#">Cadastre-se aqui</a></span>
+                <button pButton type="button" label="Entrar" (click)="authenticate()">Entrar</button>
             </div>
         </div>
     </div>

@@ -58,6 +58,8 @@ body {
             
             .input-container {
                 margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
 
                 .label {
                     font-weight: 400;
@@ -100,6 +102,12 @@ body {
                     &:hover {
                         background-color: #F5A149;
                     }
+                }
+
+                span.error-message {
+                    color: red;
+                    font-size: 12px;
+                    margin-top: 5px;
                 }
             }
 
